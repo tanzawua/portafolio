@@ -1,0 +1,331 @@
+body {
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://i.pinimg.com/originals/d5/f3/e7/d5f3e7e33f8072785936fe88cd16f502.gif");
+    object-fit: cover;
+    background-size:cover ;
+    
+  }
+  /*menu*/
+  .menu {
+    font-weight: 100;
+    background: #333333;
+    width: 150px;
+    height: 100%;
+    padding-left: 50px;
+    position: fixed;
+    z-index: 100;
+    -webkit-box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    right: -130px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    color: rgb(255, 255, 255);
+  }
+  .menu:hover, .menu:focus {
+    transform: translate3d(-130px, 0, 0);
+    animation-timing-function: 1s ease-in;
+  }
+  .menu .title {
+    top: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: rotate(270deg);
+    left: 10px;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .menu .nav {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 100;
+  }
+  .menu .nav li {
+    padding-bottom: 30px;
+    list-style-type: none;
+  }
+  .menu .nav li a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+  }
+  .menu .nav li a:hover {
+    color: #aaa;
+  }
+  
+  .intro {
+    position: absolute;
+    top: 30%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    font-size: 45px;
+    text-align: center;
+    font-style: italic;
+  }
+  /*fin de menu*/
+  /*error404*/
+  html,
+body {
+  height: 100%;
+  color: rgb(255, 255, 255);
+}
+body {
+  display: grid;
+  width: 100%;
+  font-family: Inconsolata, monospace;
+}
+body div#error {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  z-index: 2;
+  
+}
+
+body div#error div#box {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+}
+body div#error div#box:before,
+body div#error div#box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 0px 1px rgb(255, 255, 255);
+  mix-blend-mode: multiply;
+  animation: dance 2s infinite steps(1);
+}
+body div#error div#box:before {
+  clip-path: polygon(0 0, 65% 0, 35% 100%, 0 100%);
+  box-shadow: inset 0px 0px 0px 1px currentColor;
+  color: #f0f;
+}
+body div#error div#box:after {
+  clip-path: polygon(65% 0, 100% 0, 100% 100%, 35% 100%);
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  box-shadow: inset 0px 0px 0px 1px currentColor;
+  color: #0ff;
+}
+body div#error h3 {
+  position: relative;
+  font-size: 5vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: blink 1.3s infinite steps(1);
+}
+body div#error h3:before,
+body div#error h3:after {
+  content: 'ERROR 500';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  mix-blend-mode: soft-light;
+  animation: dance 2s infinite steps(2);
+}
+body div#error h3:before {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  color: #f0f;
+  animation: shiftright 200ms steps(2) infinite;
+}
+body div#error h3:after {
+  clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+  color: #0ff;
+  animation: shiftleft 200ms steps(2) infinite;
+}
+body div#error p {
+  position: relative;
+  margin-bottom: 8px;
+}
+body div#error p span {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: rgb(253, 252, 252);
+  animation: blink 3s steps(1) infinite;
+}
+body div#error p span:before,
+body div#error p span:after {
+  content: 'unstable';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  mix-blend-mode: multiply;
+}
+body div#error p span:before {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  color: #f0f;
+  animation: shiftright 1.5s steps(2) infinite;
+}
+body div#error p span:after {
+  clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+  color: #0ff;
+  animation: shiftleft 1.7s steps(2) infinite;
+}
+@-moz-keyframes dance {
+  0%, 84%, 94% {
+    transform: skew(0deg);
+  }
+  85% {
+    transform: skew(5deg);
+  }
+  90% {
+    transform: skew(-5deg);
+  }
+  98% {
+    transform: skew(3deg);
+  }
+}
+@-webkit-keyframes dance {
+  0%, 84%, 94% {
+    transform: skew(0deg);
+  }
+  85% {
+    transform: skew(5deg);
+  }
+  90% {
+    transform: skew(-5deg);
+  }
+  98% {
+    transform: skew(3deg);
+  }
+}
+@-o-keyframes dance {
+  0%, 84%, 94% {
+    transform: skew(0deg);
+  }
+  85% {
+    transform: skew(5deg);
+  }
+  90% {
+    transform: skew(-5deg);
+  }
+  98% {
+    transform: skew(3deg);
+  }
+}
+@keyframes dance {
+  0%, 84%, 94% {
+    transform: skew(0deg);
+  }
+  85% {
+    transform: skew(5deg);
+  }
+  90% {
+    transform: skew(-5deg);
+  }
+  98% {
+    transform: skew(3deg);
+  }
+}
+@-moz-keyframes shiftleft {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(-8px, 0) skew(20deg);
+  }
+}
+@-webkit-keyframes shiftleft {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(-8px, 0) skew(20deg);
+  }
+}
+@-o-keyframes shiftleft {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(-8px, 0) skew(20deg);
+  }
+}
+@keyframes shiftleft {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(-8px, 0) skew(20deg);
+  }
+}
+@-moz-keyframes shiftright {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(8px, 0) skew(20deg);
+  }
+}
+@-webkit-keyframes shiftright {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(8px, 0) skew(20deg);
+  }
+}
+@-o-keyframes shiftright {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(8px, 0) skew(20deg);
+  }
+}
+@keyframes shiftright {
+  0%, 87%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  84%, 90% {
+    transform: translate(8px, 0) skew(20deg);
+  }
+}
+@-moz-keyframes blink {
+  0%, 50%, 85%, 100% {
+    color: #000;
+  }
+  87%, 95% {
+    color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  0%, 50%, 85%, 100% {
+    color: #000;
+  }
+  87%, 95% {
+    color: transparent;
+  }
+}
+@-o-keyframes blink {
+  0%, 50%, 85%, 100% {
+    color: #000;
+  }
+  87%, 95% {
+    color: transparent;
+  }
+}
+@keyframes blink {
+  0%, 50%, 85%, 100% {
+    color: #000;
+  }
+  87%, 95% {
+    color: transparent;
+  }
+}
