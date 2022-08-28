@@ -5,71 +5,126 @@ body {
     background-size:cover ;
     
   }
-  
-  .menu {
-    font-weight: 100;
-    background: #333333;
-    width: 150px;
-    height: 100%;
-    padding-left: 50px;
-    position: fixed;
-    z-index: 100;
-    -webkit-box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
-    right: -130px;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    color: #222;
+
+  :root {
+    --primColor: #dcdcdc;
+    --secoColor: #555555;
+    --cornerRad: 4px;
   }
-  .menu:hover, .menu:focus {
-    transform: translate3d(-130px, 0, 0);
-    animation-timing-function: 1s ease-in;
+  body {
+    background-color: var(--primColor);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
   }
-  .menu .title {
-    top: 50%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    transform: rotate(270deg);
-    left: 10px;
-    font-weight: 800;
-    font-size: 15px;
+  details {
+    margin: 40px;
   }
-  .menu .nav {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-weight: 100;
-  }
-  .menu .nav li {
-    padding-bottom: 30px;
-    list-style-type: none;
-  }
-  .menu .nav li a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-  }
-  .menu .nav li a:hover {
-    color: #aaa;
-  }
-  
-  .intro {
-    position: absolute;
-    top: 30%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    font-size: 45px;
+  summary {
+    writing-mode: vertical-lr;
     text-align: center;
-    font-style: italic;
+    padding: 12px 10px;
+    width: 23px;
+    height: 17px;
+    background-color: var(--primColor);
+    border: 2px solid var(--secoColor);
+    border-radius: var(--cornerRad);
+    color: var(--secoColor);
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 200ms ease-in-out 0s;
   }
+  summary::before,
+  summary::after {
+    position: static;
+    top: 0;
+    left: 0;
+  }
+  summary::before {
+    content: "";
+  }
+  summary::after {
+    content: "III";
+    letter-spacing: -1px;
+  }
+  summary:hover {
+    transform: scale(1.1);
+  }
+  summary::marker {
+    font-size: 0;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .menu {
+    animation-name: menuAnim;
+  }
+  details[open] summary::before {
+    content: "X";
+  }
+  details[open] summary::after {
+    content: "";
+  }
+  .menu {
+    height: 0;
+    width: fit-content;
+    border-radius: var(--cornerRad);
+    background-color: var(--primColor);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    animation: closeMenu 300ms ease-in-out forwards;
+  }
+  .menu a {
+    padding: 12px 24px;
+    margin: 0 16px;
+    color: var(--secoColor);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    text-align: center;
+    transition: filter 200ms linear 0s;
+  }
+  .menu a:nth-of-type(1) {
+    padding-top: 24px;
+  }
+  .menu a:nth-last-of-type(1) {
+    border-bottom: none;
+  }
+  .menu a:hover {
+    filter: brightness(200%);
+  }
+  details::before {
+    content: "← Click This Button";
+    color: var(--secoColor);
+    position: absolute;
+    margin-left: 80px;
+    padding: 10px 10px;
+    opacity: 0.4;
+  }
+  details[open]::before {
+    animation: fadeMe 300ms linear forwards;
+  }
+  @keyframes menuAnim {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 312px;
+    }
+  }
+  @keyframes fadeMe {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  /*fin de menu*/
+
   /*main cards*/
   :root {
     --background-dark: #2d3548;
@@ -180,7 +235,15 @@ body {
     line-height: 1.4;
     word-spacing: 100vw;
   }
-  
+  @media(max-width: 540px) {
+    body {
+      background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://images.pexels.com/photos/5380792/pexels-photo-5380792.jpeg?auto=compress&cs=tinysrgb&w=1600");
+      object-fit: cover;
+      background-size:cover ;
+      
+    }
+
+  }
 
 
    

@@ -230,6 +230,14 @@ body {
 
 }
 @media(max-width: 897px){
+
+  body {
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url("https://images.pexels.com/photos/5380635/pexels-photo-5380635.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    object-fit: cover;
+    background-size:cover ;
+    
+  }
+
     /*cards*/
     .section{
       flex-direction: column;
