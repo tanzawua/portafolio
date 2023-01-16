@@ -18,7 +18,7 @@ body {
 
 .cellphone-container {
   width: 375px;
-  height: 650px;
+  height: 1100px;
   background-color: #1e1b26;
   margin: 60px auto 0 auto;
   box-shadow: 5px 5px 115px -14px black;
@@ -39,8 +39,8 @@ body {
 
 .movie-img {
   width: 100%;
-  height: 380px;
-  background-image: url("https://pps.whatsapp.net/v/t61.24694-24/287932567_4791298120975689_5972023467741237432_n.jpg?ccb=11-4&oh=01_AVx3ggttwPj8QvQuLaY7MHHBMXedkMKccHPObIhPO6YZrw&oe=6317F434");
+  height: 85%;
+  background-image: url("https://pps.whatsapp.net/v/t61.24694-24/287932567_4791298120975689_5972023467741237432_n.jpg?ccb=11-4&oh=01_AVx3ggttwPj8QvQuLaY7MHHBMXedkMKccHPObIhPO6YZrw&oe=");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
